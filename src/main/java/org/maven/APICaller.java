@@ -43,11 +43,10 @@ public class APICaller
         String result = null;
         try {
             result = e.get(1).toString().replace("<plaintext>", "").replace("</plaintext>", "");
+            System.out.println("\n" + result);
         } catch (Exception ex) {
             System.out.println("Wolfram Alpha didn't understand your request, or sent an unsupported response format");
         }
-
-        System.out.println("\n" + result);
         System.out.println("\nMore at : https://www.wolframalpha.com/input?i=" + query);
     }
 }
