@@ -35,6 +35,7 @@ public class APICaller
 
         //Sends an API request that returns an XML file
         Document doc = Jsoup.connect("http://www.wolframalpha.com/api/v2/query?appid=" + API_KEY + "&input=" + query).get();
+        System.out.println("http://www.wolframalpha.com/api/v2/query?appid=" + API_KEY + "&input=" + query);
 
         //Selects what we want from the XML
         Elements e = doc.select("plaintext");
@@ -47,26 +48,7 @@ public class APICaller
             System.out.println("Wolfram Alpha didn't understand your request, or sent an unsupported response format");
         }
 
-        //And now we do some formatting magic
-        final int length;
-        if(result != null){
-            length = result.length();
-            String topBorder = "╔";
-            for(int i = 0 ; i < length ; i++){
-                topBorder += "═";
-            }
-            topBorder += "╗";
-
-            String bottomBorder = "╚";
-            for(int i = 0 ; i < length ; i++){
-                bottomBorder += "═";
-            }
-            bottomBorder += "╝";
-
-            System.out.println("\n" + topBorder);
-            System.out.println("►" + result);
-            System.out.println(bottomBorder);
-        }
+        System.out.println("\n" + result);
         System.out.println("\nMore at : https://www.wolframalpha.com/input?i=" + query);
     }
 }
