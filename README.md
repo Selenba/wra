@@ -28,3 +28,4 @@ chmod +x wra
 wra what is the meaning of life
 rm wra-1.0-SNAPSHOT-shaded.jar
 ```
+You can then delete the cloned folder, and you're done.
