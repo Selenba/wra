@@ -18,13 +18,18 @@ Edit "APICaller.java and replace "DEMO" with your own API key, then :
 cd wra
 sudo apt install maven
 mvn clean install
-mv wra/target/wra-1.0-SNAPSHOT-shaded.jar
+cd target
+
+cd ..
+mv wra/target/wra-1.0-SNAPSHOT-shaded wra
+rm -rf target
+```
+Place "wra-1.0-SNAPSHOT-shaded.jar" wherever you want to store it. <br />
+Add the path to the jar to your $PATH, then complete your installation by running : <br />
+```
 echo '#!/usr/bin/java -jar' > wra
 cat wra-1.0-SNAPSHOT-shaded.jar >> wra
 chmod +x wra
-```
-You can now place "wra" wherever you want. <br />
-Add the path to wra to your $PATH, then verify your installation by running : <br />
-```
 wra what is the meaning of life
 ```
+Note that these commands wont work if you're using fish. These are for Bash.
