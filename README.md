@@ -25,7 +25,11 @@ Add the path to the jar to your $PATH, then complete your installation by runnin
 echo '#!/usr/bin/java -jar' > wra
 cat wra-1.0-SNAPSHOT-shaded.jar >> wra
 chmod +x wra
-wra what is the meaning of life
 rm wra-1.0-SNAPSHOT-shaded.jar
 ```
-You can then delete the cloned folder, and you're done.
+You can then delete the cloned folder, and you're done.<br />
+Test the application by running : 
+```
+wra what is the meaning of life
+```
+If a request doesn't work for some reason, try to wrap it with "" or just click the given URL.
