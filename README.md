@@ -18,7 +18,6 @@ Edit "APICaller.java and replace "DEMO" with your own API key, then :
 cd wra
 sudo apt install maven
 mvn clean install
-cd target
 ```
 In target folder, you'll find "wra-1.0-SNAPSHOT-shaded.jar". Place it wherever you want to store it. <br />
 Add the path to the jar to your $PATH, then complete your installation by running : <br />
