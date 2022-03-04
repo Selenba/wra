@@ -26,4 +26,5 @@ echo '#!/usr/bin/java -jar' > wra
 cat wra-1.0-SNAPSHOT-shaded.jar >> wra
 chmod +x wra
 wra what is the meaning of life
+rm wra-1.0-SNAPSHOT-shaded.jar
 ```
