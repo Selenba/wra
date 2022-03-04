@@ -7,8 +7,7 @@ import java.io.IOException;
 
 public class APICaller
 {
-    //You'll need to replace "DEMO" with your own API key, then compile the program
-    //Details in README
+
     private static final String API_KEY = "DEMO";
 
     public static void main( String[] args ) throws IOException {
@@ -41,26 +40,33 @@ public class APICaller
         Elements e = doc.select("plaintext");
 
         //We'll select only the 1st API response, then remove the fluff around it
-        String result = e.get(1).toString().replace("<plaintext>", "").replace("</plaintext>", "");
+        String result = null;
+        try {
+            result = e.get(1).toString().replace("<plaintext>", "").replace("</plaintext>", "");
+        } catch (Exception ex) {
+            System.out.println("Wolfram Alpha didn't understand your request, or sent an unsupported response format");
+        }
 
         //And now we do some formatting magic
-        final int length = result.length();
-        String topBorder = "╔";
-        for(int i = 0 ; i < length ; i++){
-            topBorder += "═";
+        final int length;
+        if(result != null){
+            length = result.length();
+            String topBorder = "╔";
+            for(int i = 0 ; i < length ; i++){
+                topBorder += "═";
+            }
+            topBorder += "╗";
+
+            String bottomBorder = "╚";
+            for(int i = 0 ; i < length ; i++){
+                bottomBorder += "═";
+            }
+            bottomBorder += "╝";
+
+            System.out.println("\n" + topBorder);
+            System.out.println("►" + result);
+            System.out.println(bottomBorder);
         }
-        topBorder += "╗";
-
-        String bottomBorder = "╚";
-        for(int i = 0 ; i < length ; i++){
-            bottomBorder += "═";
-        }
-        bottomBorder += "╝";
-
-        System.out.println("\n" + topBorder);
-        System.out.println("►" + result);
-        System.out.println(bottomBorder);
-
         System.out.println("\nMore at : https://www.wolframalpha.com/input?i=" + query);
     }
 }
