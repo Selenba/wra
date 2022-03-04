@@ -27,4 +27,3 @@ cat wra-1.0-SNAPSHOT-shaded.jar >> wra
 chmod +x wra
 wra what is the meaning of life
 ```
-Note that these commands wont work if you're using fish. These are for Bash.
