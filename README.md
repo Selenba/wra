@@ -7,7 +7,6 @@ You're free to modify it however you'd like, as long as you respect Wolfram Alph
 ## Setup
 To run this project, you'll need to get a (free) Wolfram Alpha API key on their website<br />
 https://products.wolframalpha.com/api/<br />
-Then :
 
 ```
 git clone https://github.com/Selenba/wra.git
