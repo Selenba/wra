@@ -12,9 +12,10 @@ Then :
 ```
 git clone https://github.com/Selenba/wra.git
 ```
-Edit "APICaller.java and replace "DEMO" with your own API key, then from inside the cloned folder :
+Edit "APICaller.java and replace "DEMO" with your own API key, then :
 
 ```
+cd wra
 sudo apt install maven
 mvn clean install
 cd target
