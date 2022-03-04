@@ -18,7 +18,7 @@ Edit "APICaller.java and replace "DEMO" with your own API key, then :
 cd wra
 sudo apt install maven
 mvn clean install
-cd target
+mv wra/target/wra-1.0-SNAPSHOT-shaded.jar
 echo '#!/usr/bin/java -jar' > wra
 cat wra-1.0-SNAPSHOT-shaded.jar >> wra
 chmod +x wra
