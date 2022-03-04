@@ -35,8 +35,7 @@ public class APICaller
 
         //Sends an API request that returns an XML file
         Document doc = Jsoup.connect("http://www.wolframalpha.com/api/v2/query?appid=" + API_KEY + "&input=" + query).get();
-        System.out.println("http://www.wolframalpha.com/api/v2/query?appid=" + API_KEY + "&input=" + query);
-
+       
         //Selects what we want from the XML
         Elements e = doc.select("plaintext");
 
